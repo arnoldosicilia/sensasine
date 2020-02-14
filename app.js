@@ -14,16 +14,6 @@ const session = require("express-session");
 const MongoStore = require("connect-mongo")(session);
 const flash = require("connect-flash");
 
-mongoose
-  .connect("mongodb://localhost/sensasine", { useNewUrlParser: true })
-  .then(x => {
-    console.log(
-      `Connected to Mongo! Database name: "${x.connections[0].name}"`
-    );
-  })
-  .catch(err => {
-    console.error("Error connecting to mongo", err);
-  });
 
 const app_name = require("./package.json").name;
 const debug = require("debug")(
@@ -31,6 +21,9 @@ const debug = require("debug")(
 );
 
 const app = express();
+
+
+require('./configs/mongoose.config')
 
 // Middleware Setup
 app.use(logger("dev"));
