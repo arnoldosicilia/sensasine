@@ -1,3 +1,6 @@
+Read Me
+End Points
+
 Verb: GET, Route /configuration?api_key/
 Get the system wide configuration information.
 
