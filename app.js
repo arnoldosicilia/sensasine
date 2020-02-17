@@ -6,7 +6,7 @@ const app = express();
 
 
 //Conect to Data Base
-require('./configs/mongoose.config')
+require('./configs/mongoose.config')(app)
 require('./configs/debugger.config')
 
 
